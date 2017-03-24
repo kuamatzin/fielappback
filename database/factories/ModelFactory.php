@@ -31,3 +31,17 @@ $factory->define(App\Business::class, function (Faker\Generator $faker) {
         'logo' => $faker->imageUrl($width = 300, $height = 300)
     ];
 });
+
+$factory->define(App\Card::class, function (Faker\Generator $faker) {
+    return [
+        'business_id' => random_int(1, 30),
+        'uses' => 5,
+        'reward' => $faker->sentence,
+        'expiration' => $faker->date($format = 'Y-m-d', $max = 'now')
+    ];
+});
+
+
+
+
+
