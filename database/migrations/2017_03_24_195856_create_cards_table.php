@@ -19,6 +19,8 @@ class CreateCardsTable extends Migration
             $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');
             $table->integer('uses');
             $table->string('reward');
+            $table->string('image');
+            $table->text('description');
             $table->date('expiration');
             $table->timestamps();
         });
