@@ -2,9 +2,11 @@
 
 use App\Business;
 use App\Card;
+use App\User;
 
 Route::get('/', function () {
-    return view('welcome');
+    $user = User::findOrFail(301);
+    return $user->cards->where('reward', '>', 60);
 });
 
 Route::get('/businesses', function () {
